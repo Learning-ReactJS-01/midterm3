@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Navbar from "./components/layout/Navbar";
 import Users from "./components/users/Users";
-
+import Search from "./components/users/Search";
 function App() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
@@ -22,8 +22,9 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="container">
-        <h1>Git Hub User data</h1>
-        <Users users={users} />
+        <h1>GitHub Users data</h1>
+        {/* <Users users={users} /> */}
+        <Search />
       </div>
     </div>
   );
