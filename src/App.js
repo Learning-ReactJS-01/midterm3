@@ -3,10 +3,7 @@ import "./App.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Navbar from "./components/layout/Navbar";
-import Users from "./components/users/Users";
-import Search from "./components/users/Search";
-import About from "./components/pages/About";
-import NotFound from "./components/pages/NotFound";
+import Home from "./components/layout/Home";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 function App() {
   const [users, setUsers] = useState([]);
@@ -25,14 +22,7 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        <div className="container">
-          <h1>GitHub Users Data</h1>
-          <Switch>
-            <Route exact path="/" component={Search} />
-            <Route exact path="/about" component={About} />
-            <Route path="/*" component={NotFound}></Route>
-          </Switch>
-        </div>
+        <Home />
       </Router>
     </div>
   );
