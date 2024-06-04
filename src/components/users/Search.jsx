@@ -1,15 +1,32 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Users from "./Users";
 const Search = () => {
   const [text, setText] = useState("");
   const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const savedUsers = sessionStorage.getItem("users");
+    const savedText = sessionStorage.getItem("text");
+    if (savedUsers) {
+      setUsers(JSON.parse(savedUsers));
+    }
+    if (savedText) {
+      setText(savedText);
+    }
+  }, []);
+
+
   const searchUsers = async (text) => {
     try {
       const response = await axios.get(
         `https://api.github.com/search/users?q=${text} `
       );
       setUsers(response.data.items);
+
+      sessionStorage.setItem("users", JSON.stringify(response.data.items));
+      sessionStorage.setItem("text", text);
+
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -17,6 +34,9 @@ const Search = () => {
 
   const clearUsers = () => {
     setUsers([]);
+
+    sessionStorage.removeItem("users");
+    sessionStorage.removeItem("text");
   };
 
   const onSubmit = (e) => {

@@ -2,13 +2,47 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
 /* Global Styles */
+/* Global Styles */
 :root {
-  --primary-color: #dc3545;
-  --dark-color: #333333;
-  --light-color: #f4f4f4;
-  --danger-color: #dc3545;
-  --success-color: #28a745;
+  --primary-color-light: #dc3545;
+  --dark-color-light: #333333;
+  --light-color-light: #f4f4f4;
+  --danger-color-light: #dc3545;
+  --success-color-light: #28a745;
+
+  --primary-color-dark: #bb86fc;
+  --dark-color-dark: #121212;
+  --light-color-dark: #1f1f1f;
+  --danger-color-dark: #cf6679;
+  --success-color-dark: #03dac6;
+
+  --primary-color: var(--primary-color-light);
+  --dark-color: var(--dark-color-light);
+  --light-color: var(--light-color-light);
+  --danger-color: var(--danger-color-light);
+  --success-color: var(--success-color-light);
 }
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+/* Other styles remain the same */
+
+/* Theme-specific styles */
+body.dark {
+  --primary-color: var(--primary-color-dark);
+  --dark-color: var(--dark-color-dark);
+  --light-color: var(--light-color-dark);
+  --danger-color: var(--danger-color-dark);
+  --success-color: var(--success-color-dark);
+}
+
+
 
 * {
   box-sizing: border-box;
@@ -358,8 +392,11 @@ table th {
   width: 100%;
   opacity: 0.9;
   margin-bottom: 1rem;
+  background: var(--success-color);
 }
 
+
+.navbar
 .navbar ul {
   display: flex;
 }
