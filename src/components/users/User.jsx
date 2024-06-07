@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import { Fragment, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom/cjs/react-router-dom.min";
 import Repos from "../repos/Repos";

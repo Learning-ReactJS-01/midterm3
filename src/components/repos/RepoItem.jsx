@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaLink, FaStar, FaCodeBranch, FaEye } from 'react-icons/fa';
+import { FaCodeBranch, FaEye } from 'react-icons/fa';
 
 const RepoItem = ({ repo }) => {
   const {
