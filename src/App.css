@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 
 /* Global Styles */
-/* Global Styles */
 :root {
   --primary-color-light: #dc3545;
   --dark-color-light: #333333;
@@ -10,11 +9,11 @@
   --danger-color-light: #dc3545;
   --success-color-light: #28a745;
 
-  --primary-color-dark: #bb86fc;
-  --dark-color-dark: #121212;
-  --light-color-dark: #1f1f1f;
-  --danger-color-dark: #cf6679;
-  --success-color-dark: #03dac6;
+  --primary-color-dark: #399119;
+  --dark-color-dark: #a1a1a1;
+  --light-color-dark: #434343;
+  --danger-color-dark: #ff5b79;
+  --success-color-dark: #0a796e;
 
   --primary-color: var(--primary-color-light);
   --dark-color: var(--dark-color-light);
@@ -31,9 +30,7 @@ body {
   color: var(--dark-color);
 }
 
-/* Other styles remain the same */
 
-/* Theme-specific styles */
 body.dark {
   --primary-color: var(--primary-color-dark);
   --dark-color: var(--dark-color-dark);
@@ -43,20 +40,27 @@ body.dark {
 }
 
 
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  background-color: #fff;
-  color: #333;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 2rem;
+  z-index: 1;
+  width: 100%;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+  background: var(--success-color);
 }
+
+
+
+
 
 a {
   color: var(--primary-color);
@@ -149,6 +153,14 @@ img {
   padding: 1rem;
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
+}
+
+.card-name {
+  color: var(--dark-color);
+}
+
+body.dark .card-name {
+  color: var(--light-color);
 }
 
 /* List */

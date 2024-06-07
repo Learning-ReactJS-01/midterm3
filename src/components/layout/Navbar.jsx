@@ -5,7 +5,9 @@ import toogle_dark from "../icons/night-mode.png";
 
 const Navbar = ({ theme, setTheme }) => {
   const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    document.body.className = newTheme; 
   };
 
   return (
@@ -19,7 +21,7 @@ const Navbar = ({ theme, setTheme }) => {
           <Link to="/about">About</Link>
           <img 
             onClick={toggleTheme} 
-            style={{ width: '38px', cursor: 'pointer' }} 
+            style={{ width: '28px', height: '28px', cursor: 'pointer' }} 
             src={theme === 'light' ? toogle_light : toogle_dark} 
             alt="Toggle Theme" 
           />

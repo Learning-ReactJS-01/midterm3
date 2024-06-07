@@ -8,16 +8,6 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 function App() {
   const [theme, setTheme] = useState('light');
 
-
-
-
-
-
-
-
-
-
-
   const [users, setUsers] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -40,7 +30,4 @@ function App() {
   );
 }
 export default App;
-{
-  /* <Users users={users} /> */
-}
-//  <Search />
+

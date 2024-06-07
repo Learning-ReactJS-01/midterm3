@@ -9,7 +9,6 @@ const Home = () => {
   
   return (
     <div className="container">
-      
       <Switch>
         <Route exact path="/" component={Search} />
         <Route exact path="/about" component={About} />
