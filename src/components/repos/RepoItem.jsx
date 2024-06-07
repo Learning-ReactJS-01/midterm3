@@ -6,6 +6,8 @@ const RepoItem = ({ repo }) => {
     name,
     description,
     html_url,
+    forks_count,
+    watchers_count
   } = repo;
 
   return (
@@ -16,6 +18,16 @@ const RepoItem = ({ repo }) => {
         </a>
       </h3>
       <p>{description}</p>
+      <div>
+        <ul>
+          <li>
+            <FaCodeBranch /> {forks_count}
+          </li>
+          <li>
+            <FaEye /> {watchers_count}
+          </li>
+        </ul>
+      </div>
     </div>
   );
 };
